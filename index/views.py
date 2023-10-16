@@ -5,6 +5,8 @@ import requests
 import redis
 import json
 import sys
+sys.path.append('/var/www/shoppingcart/index/')
+from application import *
 
 
 r = redis.StrictRedis(
@@ -15,6 +17,7 @@ r = redis.StrictRedis(
     charset="utf-8",
     decode_responses=True
 )
+
 
 # products_backup = [
 #     {
@@ -84,48 +87,51 @@ r = redis.StrictRedis(
 def index(request):
     if 'user' not in request.session:
         request.session['user'] = request.session._get_or_create_session_key()
+        request.session['username'] = "Undefined"
+        request.session['message'] = ""
     userid = request.session['user']
-    cartid = 'cart-' + userid
-    json_cart = r.get(cartid)
-    json_products = r.get('products')
-    products = json.loads(json_products)
-    if json_cart:
-        cart = json.loads(json_cart)
-    else:
-        cart = []
-    totalSum = 0.0
-    for product in products:
-        for c in cart:
-            if c['product_id'] == product['id']:
-                c['name'] = product['name']
-                c['price'] = product['price']
-                totalSum += float(c['price']) * float(c['quantity'])
-    return render(request, 'base.html', {'products': products, 'user': userid, 'cart': cart, 'totalSum': totalSum})
+    msg = request.session['message'] if 'message' in request.session else ""
+    request.session['message'] = ""
+    products = getProducts()
+    orders = getOrdersByUserId(userid)
+    return render(request, 'base.html',
+                  {'products': products,
+                   'userid': userid,
+                   'username': request.session['username'],
+                   'cart': getCartByUserId(userid),
+                   'orders': orders,
+                   'totalSum': 0.0,
+                   'message': msg,
+                   })
+
 
 def add(request, productid):
     if 'user' not in request.session:
         request.session['user'] = request.session._get_or_create_session_key()
     userid = request.session['user']
-    cartid = 'cart-' + userid
-    json_cart = r.get(cartid)
-    if json_cart:
-        cart = json.loads(json_cart)
-    else:
-        cart = []
-    productAlreadyInCart = False
-    for product in cart:
-        if product['product_id'] == productid:
-            product['quantity'] += 1
-            productAlreadyInCart = True
-            break
-    if not productAlreadyInCart:
-        cart.append({ "product_id": productid, "quantity": 1 })
-    r.set(cartid, json.dumps(cart))
-    r.expire(cartid, 600) # Time life of cart in seconds
-
-    response = 'Add to cart ' + str(cart) + ' product is ' + productid
-
+    putToCart(userid, productid)
     return redirect(index)
     # return render(request, 'add.html', {'response': response, 'user': request.session['user']})
+
+
+def makeorder(request):
+    if 'user' not in request.session:
+        request.session['user'] = request.session._get_or_create_session_key()
+    userid = request.session['user']
+    insert_id = makeOrder(userid, request.session['username'])
+    request.session['message'] = "Your order number is " + str(insert_id)
+    return redirect(index)
+    # return render(request, 'make-order.html', {'cart': getCartByUserId(userid), 'order_id': insert_id})
+
+
+def savename(request, action='save'):
+    if 'user' not in request.session:
+        request.session['user'] = request.session._get_or_create_session_key()
+        request.session['username'] = request.POST.get("username", "Undefined")
+    if action == 'edit':
+        request.session['username'] = "Undefined"
+    elif request.POST.get("username"):
+        request.session['username'] = request.POST.get("username")
+    return redirect(index)
 
 r.close()

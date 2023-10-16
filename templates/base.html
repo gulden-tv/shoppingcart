@@ -1,60 +1,114 @@
 {% include 'header.html' %}
 
-  <main>
-
-    <h2 class="display-6 text-center mb-4">Your cart</h2>
-
-    <div class="row row-cols-1 row-cols-md-8 mb-3 ">
-
-      {% if cart|length > 0 %}
-        <table class="table table-hover">
-          <th>Name</th>
-          <th>Product id</th>
-          <th>Quantity</th>
-          <th>Price</th>
-        {% for c in cart %}
-          <tr>
-            <td>{{ c.name }}</td>
-            <td>{{ c.product_id }}</td>
-            <td>{{ c.quantity }}</td>
-            <td>{{ c.price }}</td>
-          </tr>
-        {% endfor %}
-        </table>
-      <h3>Total sum: {{ totalSum }}</h3>
-      {% else %}
-        <center>Is empty</center>
-      {% endif %}
-
-      <p>Cart id: <span class="badge rounded-pill text-bg-light">cart-{{ user }}</span></p>
+<main>
+    {% if message != "" %}
+    <div class="alert alert-success" role="alert">
+        <strong>Thank you for order!</strong> {{ message }}.
     </div>
+    {% endif %}
+    <div class="row mb-3 ">
+        <div class="col-8">
+            <h2 class="display-6 text-center mb-4">Your cart</h2>
+            {% if cart.items|length > 0 %}
+            <table class="table table-hover">
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                {% for c in cart.items %}
+                <tr>
+                    <td title="{{ c.product_id }}">{{ c.name }}</td>
+                    <td>{{ c.quantity }}</td>
+                    <td>{{ c.price }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <div class="row">
+                <div class="col-6">
+                    <h4>Total sum: {{ cart.total }}</h4>
+                </div>
+                <div class="col-6">
+                    <button onclick="location.href='make-order'" type="button"
+                            class="w-100 btn btn-lg btn-outline-primary"
+                            value="{{i.id}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                             class="bi bi-cart-check"
+                             viewBox="0 0 16 16">
+                            <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                        </svg>
+                        Make order
+                    </button>
+                </div>
+            </div>
+            {% else %}
+            <center>Is empty</center>
+            {% endif %}
+
+            <p class="small mb-0">Cart id: <span class="badge rounded-pill text-bg-light">cart-{{ userid }}</span></p>
+            <p class="small mb-0">User id: <span class="badge rounded-pill text-bg-light">{{ userid }}</span></p>
+            {% if username == 'Undefined' %}
+            <form action="/save-name/save" method="post">
+                {% csrf_token %}
+                <label for="username">Your name: </label>
+                <input id="username" type="text" name="username" value="">
+                <input type="submit" class="btn btn-sm btn-primary" value="Save name">
+            </form>
+            {% else %}
+            <p class="small mb-0">User name: <span class="badge rounded-pill text-bg-light">{{ username }}</span></p>
+            <form action="/save-name/edit" method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-sm btn-primary" value="Edit name">
+            </form>
+            {% endif %}
+        </div>
+        <div class="col-4">
+            <h2 class="display-6 text-center mb-4">Your orders</h2>
+            {% if orders|length > 0 %}
+            <table class="table table-hover">
+                <th>Date</th>
+                <th>Sum</th>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.date }}</td>
+                    <td>{{ order.total }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <center>You don't have orders</center>
+            {% endif %}
+        </div>
+    </div>
+
 
     <h2 class="display-6 text-center mb-4">Our products</h2>
-
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-    {% for i in products %}
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">{{ i.name }}</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">{{ i.price }}&#20803;</h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>In stock: {{i.stock}}</li>
-            </ul>
-            <button onclick="location.href='add/{{ i.id }}'" type="button" class="w-100 btn btn-lg btn-outline-primary" value="{{i.id}}">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
-              </svg>
-              Add to cart
-            </button>
-          </div>
+
+        {% for i in products %}
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">{{ i.name }}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">{{ i.price }}&#20803;</h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>In stock: {{i.stock}}</li>
+                    </ul>
+                    <button onclick="location.href='add/{{ i.id }}'" type="button"
+                            class="w-100 btn btn-lg btn-outline-primary" value="{{i.id}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                             class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+                        </svg>
+                        Add to cart
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    {% endfor %}
+        {% endfor %}
     </div>
     <!-- User id {{ user }} -->
-  </main>
+</main>
 
 {% include 'footer.html' %}

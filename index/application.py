@@ -77,7 +77,7 @@ def makeOrder(uid, uname):
 
 
 def getOrdersByUserId(uid):
-    orders = mdb['orders'].find()
+    orders = mdb['orders'].find({'userid': uid})
     r = []
     for o in orders:
         r.append({'date': o['date'], 'total': o['total']})

@@ -97,7 +97,7 @@ def index(request):
     return render(request, 'base.html',
                   {'products': products,
                    'userid': userid,
-                   'username': request.session['username'],
+                   'username': request.session['username'] if 'username' in request.session else "Undefined",
                    'cart': getCartByUserId(userid),
                    'orders': orders,
                    'totalSum': 0.0,

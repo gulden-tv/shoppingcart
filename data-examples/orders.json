@@ -1,0 +1,208 @@
+[
+  {
+    "_id": {
+      "$oid": "652d0e8eb0ad5e81434b6142"
+    },
+    "total": 1024.0,
+    "items": [
+      {
+        "product_id": "f9a6d214-1c38-47ab-a61c-c99a59438b12",
+        "quantity": 1,
+        "name": "Old fashion cellphone",
+        "price": "24.00"
+      },
+      {
+        "product_id": "1f1321bb-0542-45d0-9601-2a3d007d5842",
+        "quantity": 1,
+        "name": "Modern iPhone",
+        "price": "1000.00"
+      }
+    ],
+    "userid": "9x78eukiq2njhhc3r3iuglv2uy4ys1ce",
+    "username": "Denis",
+    "date": "2023-10-16 18:21:02"
+  },
+  {
+    "_id": {
+      "$oid": "652d0f00b0ad5e81434b6143"
+    },
+    "total": 72.0,
+    "items": [
+      {
+        "product_id": "f9a6d214-1c38-47ab-a61c-c99a59438b12",
+        "quantity": 3,
+        "name": "Old fashion cellphone",
+        "price": "24.00"
+      }
+    ],
+    "userid": "9x78eukiq2njhhc3r3iuglv2uy4ys1ce",
+    "username": "Denis",
+    "date": "2023-10-16 18:22:56"
+  },
+  {
+    "_id": {
+      "$oid": "652d10b0b0ad5e81434b6144"
+    },
+    "total": 1024.0,
+    "items": [
+      {
+        "product_id": "1f1321bb-0542-45d0-9601-2a3d007d5842",
+        "quantity": 1,
+        "name": "Modern iPhone",
+        "price": "1000.00"
+      },
+      {
+        "product_id": "efe0c7a3-9835-4dfb-87e1-575b7d06701a",
+        "quantity": 2,
+        "name": "Herb caps",
+        "price": "12.00"
+      }
+    ],
+    "userid": "9x78eukiq2njhhc3r3iuglv2uy4ys1ce",
+    "username": "Denis",
+    "date": "2023-10-16 18:30:08"
+  },
+  {
+    "_id": {
+      "$oid": "652d17f5409f18223b227745"
+    },
+    "total": 750.0,
+    "items": [
+      {
+        "product_id": "e182115a-63d2-42ce-8fe0-5f696ecdfba6",
+        "quantity": 3,
+        "name": "Brilliant Watch",
+        "price": "250.00"
+      }
+    ],
+    "userid": "0ic2x142y58li6pfxd9xhep0zy6wp9s8",
+    "username": "Sergey",
+    "date": "2023-10-16 19:01:09"
+  },
+  {
+    "_id": {
+      "$oid": "652d1800409f18223b227746"
+    },
+    "total": 233.0,
+    "items": [
+      {
+        "product_id": "6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345",
+        "quantity": 1,
+        "name": "Stylish Cup",
+        "price": "8.00"
+      },
+      {
+        "product_id": "42860491-9f15-43d4-adeb-0db2cc99174a",
+        "quantity": 1,
+        "name": "Digital Camera",
+        "price": "225.00"
+      }
+    ],
+    "userid": "0ic2x142y58li6pfxd9xhep0zy6wp9s8",
+    "username": "Sergey",
+    "date": "2023-10-16 19:01:20"
+  },
+  {
+    "_id": {
+      "$oid": "652d1819409f18223b227747"
+    },
+    "total": 1010.0,
+    "items": [
+      {
+        "product_id": "63a3c635-4505-4588-8457-ed04fbb76511",
+        "quantity": 2,
+        "name": "Empty Bluray Disc",
+        "price": "5.00"
+      },
+      {
+        "product_id": "1f1321bb-0542-45d0-9601-2a3d007d5842",
+        "quantity": 1,
+        "name": "Modern iPhone",
+        "price": "1000.00"
+      }
+    ],
+    "userid": "0ic2x142y58li6pfxd9xhep0zy6wp9s8",
+    "username": "Sergey",
+    "date": "2023-10-16 19:01:45"
+  },
+  {
+    "_id": {
+      "$oid": "652d181c409f18223b227748"
+    },
+    "total": 60.0,
+    "items": [
+      {
+        "product_id": "97a19842-db31-4537-9241-5053d7c96239",
+        "quantity": 1,
+        "name": "256GB Pendrive",
+        "price": "60.00"
+      }
+    ],
+    "userid": "0ic2x142y58li6pfxd9xhep0zy6wp9s8",
+    "username": "Sergey",
+    "date": "2023-10-16 19:01:48"
+  },
+  {
+    "_id": {
+      "$oid": "652d1831409f18223b227749"
+    },
+    "total": 675.0,
+    "items": [
+      {
+        "product_id": "42860491-9f15-43d4-adeb-0db2cc99174a",
+        "quantity": 3,
+        "name": "Digital Camera",
+        "price": "225.00"
+      }
+    ],
+    "userid": "9x78eukiq2njhhc3r3iuglv2uy4ys1ce",
+    "username": "Denis",
+    "date": "2023-10-16 19:02:09"
+  },
+  {
+    "_id": {
+      "$oid": "652d1860409f18223b22774a"
+    },
+    "total": 334.0,
+    "items": [
+      {
+        "product_id": "e182115a-63d2-42ce-8fe0-5f696ecdfba6",
+        "quantity": 1,
+        "name": "Brilliant Watch",
+        "price": "250.00"
+      },
+      {
+        "product_id": "f9a6d214-1c38-47ab-a61c-c99a59438b12",
+        "quantity": 1,
+        "name": "Old fashion cellphone",
+        "price": "24.00"
+      },
+      {
+        "product_id": "97a19842-db31-4537-9241-5053d7c96239",
+        "quantity": 1,
+        "name": "256GB Pendrive",
+        "price": "60.00"
+      }
+    ],
+    "userid": "0tan16hmezlv2hmtwe9ekh1j2zoay5gy",
+    "username": "Ling",
+    "date": "2023-10-16 19:02:56"
+  },
+  {
+    "_id": {
+      "$oid": "652d187e409f18223b22774b"
+    },
+    "total": 24.0,
+    "items": [
+      {
+        "product_id": "efe0c7a3-9835-4dfb-87e1-575b7d06701a",
+        "quantity": 2,
+        "name": "Herb caps",
+        "price": "12.00"
+      }
+    ],
+    "userid": "0tan16hmezlv2hmtwe9ekh1j2zoay5gy",
+    "username": "Ling",
+    "date": "2023-10-16 19:03:26"
+  }
+]

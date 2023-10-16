@@ -1,0 +1,895 @@
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 03:17:53
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[11/Oct/2023 03:18:00] "GET / HTTP/1.1" 200 15048
+[11/Oct/2023 03:18:01] "GET / HTTP/1.1" 200 15048
+[11/Oct/2023 03:18:01] "GET / HTTP/1.1" 200 15048
+[11/Oct/2023 03:23:43] "GET / HTTP/1.1" 200 15048
+[11/Oct/2023 03:27:29] "GET / HTTP/1.1" 200 14454
+[11/Oct/2023 03:27:34] "GET / HTTP/1.1" 200 14454
+[11/Oct/2023 03:27:37] "GET /add/f5384efc-eadb-4d7b-a131-36516269c218 HTTP/1.1" 302 0
+[11/Oct/2023 03:27:37] "GET / HTTP/1.1" 200 14733
+[11/Oct/2023 03:27:38] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 03:27:38] "GET / HTTP/1.1" 200 14897
+[11/Oct/2023 03:27:39] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 03:27:40] "GET / HTTP/1.1" 200 14897
+[11/Oct/2023 03:27:41] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 03:27:41] "GET / HTTP/1.1" 200 14897
+[11/Oct/2023 03:27:58] "GET / HTTP/1.1" 200 14454
+[11/Oct/2023 03:27:58] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 03:27:58] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 03:27:58] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 03:28:00] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 03:28:00] "GET / HTTP/1.1" 200 14728
+[11/Oct/2023 03:28:01] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 03:28:01] "GET / HTTP/1.1" 200 14728
+[11/Oct/2023 03:28:02] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 03:28:02] "GET / HTTP/1.1" 200 14892
+[11/Oct/2023 03:28:03] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 03:28:03] "GET / HTTP/1.1" 200 14892
+[11/Oct/2023 03:28:04] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 03:28:04] "GET / HTTP/1.1" 200 14892
+[11/Oct/2023 03:31:56] "GET / HTTP/1.1" 200 14897
+Not Found: /favicon.ico
+[11/Oct/2023 03:31:56] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 03:31:57] "GET / HTTP/1.1" 200 14897
+Not Found: /favicon.ico
+[11/Oct/2023 03:31:57] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 03:31:58] "GET / HTTP/1.1" 200 14897
+[11/Oct/2023 03:31:58] "GET / HTTP/1.1" 200 14897
+[11/Oct/2023 03:34:08] "GET / HTTP/1.1" 200 14897
+Not Found: /favicon.ico
+[11/Oct/2023 03:34:08] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 03:35:38] "GET / HTTP/1.1" 200 23167
+Not Found: /favicon.ico
+[11/Oct/2023 03:35:38] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 03:36:03] "GET / HTTP/1.1" 200 23167
+[11/Oct/2023 03:36:12] "GET / HTTP/1.1" 200 23167
+[11/Oct/2023 03:36:13] "GET / HTTP/1.1" 200 23167
+[11/Oct/2023 03:37:17] "GET / HTTP/1.1" 200 20457
+[11/Oct/2023 03:37:31] "GET / HTTP/1.1" 200 20457
+[11/Oct/2023 03:39:13] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 03:39:14] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 03:39:14] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 03:39:14] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 03:39:14] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 03:39:17] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 03:39:17] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 03:39:18] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 03:39:18] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 03:39:19] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 03:39:19] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 03:39:21] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 03:39:21] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:39:24] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:40:11] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:40:12] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:40:12] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:40:12] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:40:34] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:40:34] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:41:14] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:41:14] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:41:14] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:41:15] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:41:19] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:41:39] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 03:41:39] "GET / HTTP/1.1" 200 20445
+[11/Oct/2023 03:41:41] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 03:41:41] "GET / HTTP/1.1" 200 20609
+[11/Oct/2023 03:41:42] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 03:41:42] "GET / HTTP/1.1" 200 20609
+[11/Oct/2023 03:41:43] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 03:41:43] "GET / HTTP/1.1" 200 20609
+[11/Oct/2023 05:48:47] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 05:48:47] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 05:48:50] "GET /add/6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345 HTTP/1.1" 302 0
+[11/Oct/2023 05:48:50] "GET / HTTP/1.1" 200 20284
+[11/Oct/2023 05:48:52] "GET /add/6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345 HTTP/1.1" 302 0
+[11/Oct/2023 05:48:53] "GET / HTTP/1.1" 200 20284
+[11/Oct/2023 05:48:54] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 05:48:54] "GET / HTTP/1.1" 200 20440
+[11/Oct/2023 05:48:57] "GET /add/x341115a-63d2-42ce-8fe0-5f696ecdfca6 HTTP/1.1" 302 0
+[11/Oct/2023 05:48:57] "GET / HTTP/1.1" 200 20604
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 05:51:31
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 05:51:52
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 05:52:07
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[11/Oct/2023 05:52:21] "GET / HTTP/1.1" 200 20604
+[11/Oct/2023 05:52:22] "GET / HTTP/1.1" 200 20604
+[11/Oct/2023 05:52:38] "GET / HTTP/1.1" 200 20604
+[11/Oct/2023 05:52:49] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 05:52:49] "GET / HTTP/1.1" 200 20761
+[11/Oct/2023 05:52:53] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 05:52:53] "GET / HTTP/1.1" 200 20761
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 05:53:33
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[11/Oct/2023 05:53:33] "GET / HTTP/1.1" 200 20761
+[11/Oct/2023 05:53:34] "GET / HTTP/1.1" 200 20761
+[11/Oct/2023 05:55:53] "GET / HTTP/1.1" 200 20761
+Not Found: /favicon.ico
+[11/Oct/2023 05:55:53] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 05:55:54] "GET / HTTP/1.1" 200 20761
+[11/Oct/2023 06:03:21] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 06:11:25] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 06:11:25] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 06:11:32] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 06:11:32] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 06:11:33] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 06:11:33] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 06:11:36] "GET /add/efe0c7a3-9835-4dfb-87e1-575b7d06701a HTTP/1.1" 302 0
+[11/Oct/2023 06:11:36] "GET / HTTP/1.1" 200 20446
+[11/Oct/2023 06:11:54] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 06:11:54] "GET / HTTP/1.1" 200 20603
+[11/Oct/2023 06:12:40] "GET / HTTP/1.1" 200 20603
+[11/Oct/2023 06:16:17] "GET / HTTP/1.1" 200 20603
+[11/Oct/2023 06:18:05] "GET / HTTP/1.1" 200 20603
+[11/Oct/2023 06:18:12] "GET / HTTP/1.1" 200 20603
+Not Found: /favicon.ico
+[11/Oct/2023 06:18:12] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 06:19:00] "GET / HTTP/1.1" 200 20603
+[11/Oct/2023 06:25:55] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 06:26:06] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 06:26:06] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 06:26:08] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 06:26:08] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 06:26:09] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 06:26:09] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 06:26:09] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 06:26:09] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 06:26:10] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 06:26:10] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 06:26:12] "GET /add/f5384efc-eadb-4d7b-a131-36516269c218 HTTP/1.1" 302 0
+[11/Oct/2023 06:26:12] "GET / HTTP/1.1" 200 20615
+[11/Oct/2023 06:26:15] "GET /add/f5384efc-eadb-4d7b-a131-36516269c218 HTTP/1.1" 302 0
+[11/Oct/2023 06:26:15] "GET / HTTP/1.1" 200 20615
+[11/Oct/2023 06:59:07] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 06:59:08] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 07:04:16] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 07:04:16] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 07:04:17] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 07:04:18] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 07:04:26] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 07:04:26] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 07:04:28] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 07:04:28] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 07:04:28] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 07:04:28] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 07:04:29] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 07:04:29] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 07:13:57] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 07:21:12] "GET / HTTP/1.1" 200 20014
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 09:27:09
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[11/Oct/2023 09:27:14] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 09:27:15] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 09:27:16] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 09:27:16] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 09:27:17] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 09:27:17] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 09:27:17] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 09:27:17] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 09:29:12] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 09:29:12] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 10:03:57] "GET / HTTP/1.1" 200 20168
+[11/Oct/2023 10:03:57] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:03:58] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 10:03:58] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 10:04:21] "GET / HTTP/1.1" 200 20168
+[11/Oct/2023 10:04:22] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:04:22] "GET / HTTP/1.1" 200 20442
+[11/Oct/2023 10:04:24] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:04:24] "GET / HTTP/1.1" 200 20442
+[11/Oct/2023 10:04:51] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:04:51] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:04:51] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 10:04:52] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 10:04:54] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:04:54] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:04:54] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 10:04:54] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 10:04:55] "GET / HTTP/1.1" 200 20442
+[11/Oct/2023 10:04:55] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:04:56] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:04:56] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 10:04:56] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 10:04:58] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:04:58] "GET / HTTP/1.1" 200 20442
+[11/Oct/2023 10:05:00] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:00] "GET / HTTP/1.1" 200 20606
+[11/Oct/2023 10:05:01] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:01] "GET / HTTP/1.1" 200 20606
+[11/Oct/2023 10:05:03] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:03] "GET / HTTP/1.1" 200 20286
+[11/Oct/2023 10:05:05] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:05] "GET / HTTP/1.1" 200 20286
+[11/Oct/2023 10:05:06] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:06] "GET / HTTP/1.1" 200 20286
+[11/Oct/2023 10:05:07] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:07] "GET / HTTP/1.1" 200 20286
+[11/Oct/2023 10:05:07] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:07] "GET / HTTP/1.1" 200 20286
+[11/Oct/2023 10:05:08] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:08] "GET / HTTP/1.1" 200 20450
+[11/Oct/2023 10:05:09] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:09] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 10:05:09] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:09] "GET / HTTP/1.1" 200 20450
+[11/Oct/2023 10:05:10] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:10] "GET / HTTP/1.1" 200 20450
+[11/Oct/2023 10:05:12] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:12] "GET / HTTP/1.1" 200 20608
+[11/Oct/2023 10:05:13] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:13] "GET / HTTP/1.1" 200 20608
+[11/Oct/2023 10:05:14] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:14] "GET / HTTP/1.1" 200 20608
+[11/Oct/2023 10:05:16] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:16] "GET / HTTP/1.1" 200 20450
+[11/Oct/2023 10:05:16] "GET /add/f5384efc-eadb-4d7b-a131-36516269c218 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:16] "GET / HTTP/1.1" 200 20771
+[11/Oct/2023 10:05:16] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:05:16] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:05:16] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 10:05:16] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 10:05:17] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:17] "GET / HTTP/1.1" 200 20771
+[11/Oct/2023 10:05:29] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:29] "GET / HTTP/1.1" 200 20607
+[11/Oct/2023 10:05:30] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:30] "GET / HTTP/1.1" 200 20607
+[11/Oct/2023 10:05:31] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:05:31] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:31] "GET / HTTP/1.1" 200 20607
+[11/Oct/2023 10:05:31] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:05:31] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 10:05:31] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 10:05:31] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:31] "GET / HTTP/1.1" 200 20607
+[11/Oct/2023 10:05:32] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:32] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 10:05:32] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:32] "GET / HTTP/1.1" 200 20607
+[11/Oct/2023 10:05:33] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:33] "GET / HTTP/1.1" 200 20607
+[11/Oct/2023 10:05:36] "GET /add/42860491-9f15-43d4-adeb-0db2cc99174a HTTP/1.1" 302 0
+[11/Oct/2023 10:05:36] "GET / HTTP/1.1" 200 20928
+[11/Oct/2023 10:05:37] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:37] "GET / HTTP/1.1" 200 21085
+[11/Oct/2023 10:05:39] "GET /add/63a3c635-4505-4588-8457-ed04fbb76511 HTTP/1.1" 302 0
+[11/Oct/2023 10:05:39] "GET / HTTP/1.1" 200 21245
+[11/Oct/2023 10:06:00] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:06:00] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:06:00] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+[11/Oct/2023 10:06:10] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:10] "GET / HTTP/1.1" 200 20286
+[11/Oct/2023 10:06:12] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:12] "GET / HTTP/1.1" 200 20286
+[11/Oct/2023 10:06:17] "GET / HTTP/1.1" 200 20606
+[11/Oct/2023 10:06:18] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:18] "GET / HTTP/1.1" 200 20286
+[11/Oct/2023 10:06:21] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:21] "GET / HTTP/1.1" 200 20450
+[11/Oct/2023 10:06:23] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:23] "GET / HTTP/1.1" 200 20608
+[11/Oct/2023 10:06:25] "GET /add/f5384efc-eadb-4d7b-a131-36516269c218 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:25] "GET / HTTP/1.1" 200 20771
+[11/Oct/2023 10:06:26] "GET /add/6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:26] "GET / HTTP/1.1" 200 20925
+[11/Oct/2023 10:06:30] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:30] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 10:06:35] "GET /add/6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:35] "GET / HTTP/1.1" 200 21399
+[11/Oct/2023 10:06:37] "GET /add/6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:38] "GET / HTTP/1.1" 200 21399
+[11/Oct/2023 10:06:38] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:38] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 10:06:40] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:06:40] "GET / HTTP/1.1" 200 20608
+[11/Oct/2023 10:06:45] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:06:45] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:06:45] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 10:06:45] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 10:07:38] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:07:38] "GET / HTTP/1.1" 200 21399
+[11/Oct/2023 10:07:40] "GET / HTTP/1.1" 200 21399
+[11/Oct/2023 10:07:42] "GET / HTTP/1.1" 200 21399
+[11/Oct/2023 10:07:43] "GET / HTTP/1.1" 200 21399
+[11/Oct/2023 10:07:43] "GET / HTTP/1.1" 200 21399
+[11/Oct/2023 10:07:45] "GET /add/x341115a-63d2-42ce-8fe0-5f696ecdfca6 HTTP/1.1" 302 0
+[11/Oct/2023 10:07:45] "GET / HTTP/1.1" 200 21563
+[11/Oct/2023 10:07:47] "GET /add/x341115a-63d2-42ce-8fe0-5f696ecdfca6 HTTP/1.1" 302 0
+[11/Oct/2023 10:07:47] "GET / HTTP/1.1" 200 21563
+[11/Oct/2023 10:09:37] "GET / HTTP/1.1" 200 20608
+[11/Oct/2023 10:13:19] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:13:19] "GET / HTTP/1.1" 200 20762
+[11/Oct/2023 10:13:24] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:13:24] "GET / HTTP/1.1" 200 20762
+[11/Oct/2023 10:15:31] "GET / HTTP/1.1" 200 20762
+[11/Oct/2023 10:15:47] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:15:47] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:15:47] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+[11/Oct/2023 10:16:09] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:16:10] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 10:16:11] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:16:11] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 10:16:12] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:16:12] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 10:16:13] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:16:13] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 10:16:13] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:16:13] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 10:17:09] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:17:09] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:17:12] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:17:12] "GET / HTTP/1.1" 200 20294
+Not Found: /favicon.ico
+[11/Oct/2023 10:17:12] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 10:17:13] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:17:13] "GET / HTTP/1.1" 200 20450
+[11/Oct/2023 10:17:23] "GET / HTTP/1.1" 200 20450
+[11/Oct/2023 10:20:03] "GET / HTTP/1.1" 200 20762
+[11/Oct/2023 10:21:17] "GET / HTTP/1.1" 200 20294
+[11/Oct/2023 10:21:46] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:24:19] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:24:19] "GET / HTTP/1.1" 200 20288
+[11/Oct/2023 10:25:02] "GET / HTTP/1.1" 200 20168
+[11/Oct/2023 10:25:11] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:25:11] "GET / HTTP/1.1" 200 20442
+[11/Oct/2023 10:25:23] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:25:23] "GET / HTTP/1.1" 200 20442
+[11/Oct/2023 10:25:31] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:25:31] "GET / HTTP/1.1" 200 20598
+[11/Oct/2023 10:28:03] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:28:03] "GET / HTTP/1.1" 200 20452
+[11/Oct/2023 10:28:14] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:28:14] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:28:19] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:28:19] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:28:19] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 10:28:19] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 10:28:41] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 10:28:41] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 10:28:41] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+[11/Oct/2023 10:29:55] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:29:55] "GET / HTTP/1.1" 200 20286
+[11/Oct/2023 10:34:32] "GET / HTTP/1.1" 200 20602
+[11/Oct/2023 10:34:40] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 10:35:30] "GET / HTTP/1.1" 200 20671
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 10:36:12
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[11/Oct/2023 10:36:18] "GET / HTTP/1.1" 200 20172
+[11/Oct/2023 10:36:20] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:36:20] "GET / HTTP/1.1" 200 20504
+[11/Oct/2023 10:36:22] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:36:22] "GET / HTTP/1.1" 200 20690
+[11/Oct/2023 10:36:25] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:36:25] "GET / HTTP/1.1" 200 20875
+[11/Oct/2023 10:37:43] "GET / HTTP/1.1" 200 20902
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 10:40:07
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/gulden/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gulden/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/shoppingcart/index/views.py", line 102, in index
+    totalSum += c['price'] * c['quantity']
+TypeError: unsupported operand type(s) for +=: 'float' and 'str'
+[11/Oct/2023 10:40:21] "GET / HTTP/1.1" 500 67138
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 10:41:20
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[11/Oct/2023 10:41:22] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 10:41:39] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:41:39] "GET / HTTP/1.1" 200 20908
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 10:43:41
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[11/Oct/2023 10:43:43] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 10:43:44] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 10:43:55] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 10:43:56] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 10:43:59] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:43:59] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 10:44:06] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 10:44:07] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 10:44:09] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 10:44:10] "GET / HTTP/1.1" 200 20172
+[11/Oct/2023 10:44:27] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:44:27] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:44:27] "GET / HTTP/1.1" 200 20535
+[11/Oct/2023 10:44:28] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:44:28] "GET / HTTP/1.1" 200 20535
+[11/Oct/2023 10:44:30] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:44:30] "GET / HTTP/1.1" 200 20722
+[11/Oct/2023 10:44:31] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 10:44:31] "GET / HTTP/1.1" 200 20722
+[11/Oct/2023 10:44:33] "GET / HTTP/1.1" 200 20722
+[11/Oct/2023 10:44:34] "GET / HTTP/1.1" 200 20722
+[11/Oct/2023 10:44:41] "GET / HTTP/1.1" 200 20722
+[11/Oct/2023 10:44:41] "GET / HTTP/1.1" 200 20172
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 10:45:39
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 10:45:43
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[11/Oct/2023 10:46:08] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 200 7786
+[11/Oct/2023 10:46:52] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 200 7786
+[11/Oct/2023 10:46:59] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 200 7786
+[11/Oct/2023 10:47:00] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 200 7786
+/var/www/html/shoppingcart/index/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 11, 2023 - 10:47:17
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[11/Oct/2023 10:47:18] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 10:47:18] "GET / HTTP/1.1" 200 20532
+[11/Oct/2023 10:47:22] "GET / HTTP/1.1" 200 20532
+[11/Oct/2023 10:47:33] "GET /static/assets/dist/css/bootstrap.min.css.map HTTP/1.1" 200 589161
+[11/Oct/2023 10:47:42] "GET /static/assets/dist/css/bootstrap.min.css.map HTTP/1.1" 200 589161
+[11/Oct/2023 10:47:48] "GET /static/assets/dist/css/bootstrap.min.css.map HTTP/1.1" 200 589161
+[11/Oct/2023 10:52:17] "GET / HTTP/1.1" 200 20532
+[11/Oct/2023 10:52:54] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:52:54] "GET / HTTP/1.1" 200 20723
+[11/Oct/2023 10:52:54] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:52:54] "GET / HTTP/1.1" 200 20723
+[11/Oct/2023 10:52:55] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 10:52:55] "GET / HTTP/1.1" 200 20723
+[11/Oct/2023 11:27:58] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 11:28:46] "GET / HTTP/1.1" 200 20172
+[11/Oct/2023 11:29:51] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 11:50:25] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 11:50:25] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 11:50:25] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+[11/Oct/2023 11:51:14] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 11:51:14] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 11:51:14] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 11:51:14] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 11:51:36] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 11:51:36] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 11:51:36] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+[11/Oct/2023 11:51:43] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 11:51:43] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 11:51:43] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 11:51:43] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 11:52:42] "GET /add/efe0c7a3-9835-4dfb-87e1-575b7d06701a HTTP/1.1" 302 0
+[11/Oct/2023 11:52:42] "GET / HTTP/1.1" 200 20369
+[11/Oct/2023 11:52:44] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 11:52:44] "GET / HTTP/1.1" 200 20560
+[11/Oct/2023 11:52:45] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 11:52:45] "GET / HTTP/1.1" 200 20747
+[11/Oct/2023 11:52:50] "GET /add/f5384efc-eadb-4d7b-a131-36516269c218 HTTP/1.1" 302 0
+[11/Oct/2023 11:52:50] "GET / HTTP/1.1" 200 20937
+[11/Oct/2023 11:52:52] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 11:52:52] "GET / HTTP/1.1" 200 21121
+[11/Oct/2023 11:52:58] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 11:53:00] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 11:53:00] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 11:53:00] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+[11/Oct/2023 11:53:01] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 11:53:01] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 11:53:02] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 11:53:02] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 11:53:03] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 11:53:03] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 11:53:12] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 11:53:12] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 11:53:12] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 11:53:12] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 11:53:15] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 11:53:15] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 11:53:17] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 11:53:17] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 11:53:24] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 11:53:24] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 11:53:25] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 11:53:25] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 11:54:34] "GET / HTTP/1.1" 200 20018
+Not Found: /favicon.ico
+[11/Oct/2023 11:54:35] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 11:54:37] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 11:54:38] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 11:54:40] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 11:54:40] "GET / HTTP/1.1" 200 20568
+[11/Oct/2023 11:54:42] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 11:54:42] "GET / HTTP/1.1" 200 20754
+[11/Oct/2023 11:54:44] "GET /add/f5384efc-eadb-4d7b-a131-36516269c218 HTTP/1.1" 302 0
+[11/Oct/2023 11:54:44] "GET / HTTP/1.1" 200 20944
+[11/Oct/2023 11:54:46] "GET /add/6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345 HTTP/1.1" 302 0
+[11/Oct/2023 11:54:46] "GET / HTTP/1.1" 200 21124
+[11/Oct/2023 11:54:49] "GET /add/6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345 HTTP/1.1" 302 0
+[11/Oct/2023 11:54:49] "GET / HTTP/1.1" 200 21124
+[11/Oct/2023 11:54:50] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 11:54:51] "GET / HTTP/1.1" 200 21124
+[11/Oct/2023 11:54:53] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 11:54:53] "GET / HTTP/1.1" 200 21124
+[11/Oct/2023 11:54:55] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 11:54:55] "GET / HTTP/1.1" 200 21308
+[11/Oct/2023 12:04:37] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 12:04:37] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 12:04:37] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 12:04:37] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 12:05:00] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 12:05:14] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 12:05:14] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 12:05:18] "GET /add/42860491-9f15-43d4-adeb-0db2cc99174a HTTP/1.1" 302 0
+[11/Oct/2023 12:05:18] "GET / HTTP/1.1" 200 20562
+[11/Oct/2023 12:05:20] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 12:05:20] "GET / HTTP/1.1" 200 20753
+[11/Oct/2023 12:05:22] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 12:05:23] "GET / HTTP/1.1" 200 20937
+Not Found: /favicon.ico
+[11/Oct/2023 13:12:49] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 13:26:02] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 13:26:02] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 13:26:02] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 13:26:02] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 13:26:19] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 13:26:19] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 13:26:23] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 13:26:23] "GET / HTTP/1.1" 200 20568
+[11/Oct/2023 13:26:28] "GET /add/63a3c635-4505-4588-8457-ed04fbb76511 HTTP/1.1" 302 0
+[11/Oct/2023 13:26:28] "GET / HTTP/1.1" 200 20754
+[11/Oct/2023 13:26:32] "GET /add/97a19842-db31-4537-9241-5053d7c96239 HTTP/1.1" 302 0
+[11/Oct/2023 13:26:32] "GET / HTTP/1.1" 200 20938
+[11/Oct/2023 13:56:45] "GET / HTTP/1.1" 200 20018
+[11/Oct/2023 13:56:50] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 13:56:50] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 14:50:40] "GET / HTTP/1.1" 200 20172
+[11/Oct/2023 17:01:31] "GET / HTTP/1.1" 200 20172
+Not Found: /favicon.ico
+[11/Oct/2023 17:01:31] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 17:01:36] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 17:01:36] "GET / HTTP/1.1" 200 20535
+[11/Oct/2023 17:01:38] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 17:01:38] "GET / HTTP/1.1" 200 20535
+[11/Oct/2023 17:01:40] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 17:01:40] "GET / HTTP/1.1" 200 20722
+[11/Oct/2023 17:01:43] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 17:01:43] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 17:01:46] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 17:01:46] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 17:01:49] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 17:01:49] "GET / HTTP/1.1" 200 20908
+[11/Oct/2023 17:02:50] "GET / HTTP/1.1" 200 20904
+[11/Oct/2023 17:22:07] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 17:22:07] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[11/Oct/2023 17:22:07] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[11/Oct/2023 17:22:07] "GET /favicon.ico HTTP/1.1" 404 2565
+[11/Oct/2023 17:22:25] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 17:22:26] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 17:22:28] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[11/Oct/2023 17:22:28] "GET / HTTP/1.1" 200 20373
+[11/Oct/2023 17:22:30] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 17:22:30] "GET / HTTP/1.1" 200 20564
+[11/Oct/2023 17:22:31] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[11/Oct/2023 17:22:31] "GET / HTTP/1.1" 200 20750
+[11/Oct/2023 17:22:34] "GET /add/efe0c7a3-9835-4dfb-87e1-575b7d06701a HTTP/1.1" 302 0
+[11/Oct/2023 17:22:34] "GET / HTTP/1.1" 200 20929
+[11/Oct/2023 18:17:46] "GET / HTTP/1.1" 200 20014
+[11/Oct/2023 18:19:12] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[11/Oct/2023 18:19:12] "GET / HTTP/1.1" 200 20377
+[11/Oct/2023 18:19:19] "GET /add/6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345 HTTP/1.1" 302 0
+[11/Oct/2023 18:19:19] "GET / HTTP/1.1" 200 20557
+[11/Oct/2023 18:19:20] "GET /add/42860491-9f15-43d4-adeb-0db2cc99174a HTTP/1.1" 302 0
+[11/Oct/2023 18:19:20] "GET / HTTP/1.1" 200 20743
+[11/Oct/2023 18:36:02] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 00:02:06] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 00:02:06] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[12/Oct/2023 00:02:06] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[12/Oct/2023 00:02:06] "GET /favicon.ico HTTP/1.1" 404 2565
+Not Found: /favicon.ico
+[12/Oct/2023 00:02:06] "GET /favicon.ico HTTP/1.1" 404 2565
+[12/Oct/2023 00:03:16] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 00:03:16] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[12/Oct/2023 00:03:16] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[12/Oct/2023 00:03:17] "GET /favicon.ico HTTP/1.1" 404 2565
+[12/Oct/2023 00:03:24] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:03:25] "GET / HTTP/1.1" 200 20377
+[12/Oct/2023 00:03:26] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:03:26] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:05:03] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 00:05:03] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[12/Oct/2023 00:05:03] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[12/Oct/2023 00:05:04] "GET /favicon.ico HTTP/1.1" 404 2565
+[12/Oct/2023 00:05:06] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[12/Oct/2023 00:05:06] "GET / HTTP/1.1" 200 20373
+[12/Oct/2023 00:05:08] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:05:08] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:12:05] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 00:12:05] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[12/Oct/2023 00:12:05] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /img/ico.png
+[12/Oct/2023 00:12:06] "GET /img/ico.png HTTP/1.1" 404 2565
+Not Found: /favicon.ico
+[12/Oct/2023 00:12:06] "GET /favicon.ico HTTP/1.1" 404 2565
+[12/Oct/2023 00:12:12] "GET /add/42860491-9f15-43d4-adeb-0db2cc99174a HTTP/1.1" 302 0
+[12/Oct/2023 00:12:12] "GET / HTTP/1.1" 200 20372
+Not Found: /img/ico.png
+[12/Oct/2023 00:12:12] "GET /img/ico.png HTTP/1.1" 404 2565
+[12/Oct/2023 00:20:55] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 00:20:55] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[12/Oct/2023 00:20:55] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[12/Oct/2023 00:20:55] "GET /favicon.ico HTTP/1.1" 404 2565
+[12/Oct/2023 00:21:30] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 00:21:32] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[12/Oct/2023 00:21:32] "GET / HTTP/1.1" 200 20373
+[12/Oct/2023 00:21:35] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:21:35] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:28:09] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 00:28:13] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:28:13] "GET / HTTP/1.1" 200 20377
+[12/Oct/2023 00:28:15] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[12/Oct/2023 00:28:16] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:28:17] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:28:17] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 00:28:23] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 00:28:25] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 00:28:56] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[12/Oct/2023 00:28:56] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 00:28:59] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:28:59] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 00:29:01] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:29:02] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 00:29:51] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 00:30:01] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[12/Oct/2023 00:30:01] "GET / HTTP/1.1" 200 20373
+[12/Oct/2023 00:38:25] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:38:25] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:38:26] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:38:26] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:38:26] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:38:26] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:38:27] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:38:27] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:38:27] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:38:27] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:38:28] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 00:38:28] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 00:46:21] "GET /add/42860491-9f15-43d4-adeb-0db2cc99174a HTTP/1.1" 302 0
+[12/Oct/2023 00:46:21] "GET / HTTP/1.1" 200 20749
+[12/Oct/2023 00:46:26] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:26] "GET / HTTP/1.1" 200 20935
+[12/Oct/2023 00:46:28] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:28] "GET / HTTP/1.1" 200 20935
+[12/Oct/2023 00:46:29] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:29] "GET / HTTP/1.1" 200 20935
+[12/Oct/2023 00:46:29] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:29] "GET / HTTP/1.1" 200 20935
+[12/Oct/2023 00:46:30] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:30] "GET / HTTP/1.1" 200 20935
+[12/Oct/2023 00:46:30] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:30] "GET / HTTP/1.1" 200 20935
+[12/Oct/2023 00:46:30] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:30] "GET / HTTP/1.1" 200 20935
+[12/Oct/2023 00:46:31] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:31] "GET / HTTP/1.1" 200 20935
+[12/Oct/2023 00:46:31] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:31] "GET / HTTP/1.1" 200 20935
+[12/Oct/2023 00:46:32] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:32] "GET / HTTP/1.1" 200 20937
+[12/Oct/2023 00:46:32] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:32] "GET / HTTP/1.1" 200 20937
+[12/Oct/2023 00:46:33] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:33] "GET / HTTP/1.1" 200 20937
+[12/Oct/2023 00:46:33] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:33] "GET / HTTP/1.1" 200 20937
+[12/Oct/2023 00:46:34] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 00:46:34] "GET / HTTP/1.1" 200 20937
+[12/Oct/2023 00:50:50] "GET / HTTP/1.1" 200 20937
+[12/Oct/2023 02:32:43] "GET / HTTP/1.1" 200 20014
+Not Found: /favicon.ico
+[12/Oct/2023 02:32:43] "GET /favicon.ico HTTP/1.1" 404 2565
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 12, 2023 - 02:48:18
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 12, 2023 - 02:48:26
+Django version 4.2.6, using settings 'shoppingcart.settings'
+Starting development server at http://10.21.17.68:8080/
+Quit the server with CONTROL-C.
+
+[12/Oct/2023 02:48:35] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 06:33:26] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 06:33:39] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[12/Oct/2023 06:33:39] "GET / HTTP/1.1" 200 20373
+Not Found: /favicon.ico
+[12/Oct/2023 06:33:39] "GET /favicon.ico HTTP/1.1" 404 2565
+[12/Oct/2023 06:33:40] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[12/Oct/2023 06:33:40] "GET / HTTP/1.1" 200 20373
+[12/Oct/2023 06:33:41] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 06:33:41] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 06:33:42] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 06:33:42] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 06:34:04] "GET / HTTP/1.1" 200 20168
+Not Found: /favicon.ico
+[12/Oct/2023 06:34:04] "GET /favicon.ico HTTP/1.1" 404 2565
+[12/Oct/2023 06:34:10] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 06:34:10] "GET / HTTP/1.1" 200 20531
+[12/Oct/2023 06:34:11] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 06:34:11] "GET / HTTP/1.1" 200 20531
+[12/Oct/2023 07:45:42] "GET / HTTP/1.1" 200 20014
+Not Found: /favicon.ico
+[12/Oct/2023 07:45:43] "GET /favicon.ico HTTP/1.1" 404 2565
+[12/Oct/2023 07:45:50] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[12/Oct/2023 07:45:51] "GET / HTTP/1.1" 200 20373
+[12/Oct/2023 07:45:52] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 07:45:53] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 07:45:54] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 07:45:55] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 07:45:58] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 07:45:58] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 07:46:00] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 07:46:01] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 07:52:22] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 07:52:22] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[12/Oct/2023 07:52:22] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[12/Oct/2023 07:52:22] "GET /favicon.ico HTTP/1.1" 404 2565
+[12/Oct/2023 08:00:42] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 08:00:43] "GET /add/e182115a-63d2-42ce-8fe0-5f696ecdfba6 HTTP/1.1" 302 0
+[12/Oct/2023 08:00:44] "GET / HTTP/1.1" 200 20373
+[12/Oct/2023 08:00:45] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 08:00:46] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 08:00:47] "GET /add/f9a6d214-1c38-47ab-a61c-c99a59438b12 HTTP/1.1" 302 0
+[12/Oct/2023 08:00:48] "GET / HTTP/1.1" 200 20564
+[12/Oct/2023 08:00:49] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 08:00:49] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 08:00:50] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 08:00:51] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 08:00:53] "GET /add/1f1321bb-0542-45d0-9601-2a3d007d5842 HTTP/1.1" 302 0
+[12/Oct/2023 08:00:53] "GET / HTTP/1.1" 200 20750
+[12/Oct/2023 08:01:49] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 08:08:47] "GET / HTTP/1.1" 200 20014
+[12/Oct/2023 08:08:48] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[12/Oct/2023 08:08:48] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[12/Oct/2023 08:08:48] "GET /favicon.ico HTTP/1.1" 404 2565
+[14/Oct/2023 04:00:15] "GET / HTTP/1.1" 200 20014
+[14/Oct/2023 04:00:15] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[14/Oct/2023 04:00:15] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[14/Oct/2023 04:00:15] "GET /favicon.ico HTTP/1.1" 404 2565
+[15/Oct/2023 23:56:44] "GET / HTTP/1.1" 200 20168
+[15/Oct/2023 23:56:44] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[15/Oct/2023 23:56:44] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /apple-touch-icon-precomposed.png
+[15/Oct/2023 23:56:44] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 2628
+Not Found: /apple-touch-icon.png
+[15/Oct/2023 23:56:44] "GET /apple-touch-icon.png HTTP/1.1" 404 2592
+[16/Oct/2023 00:01:34] "GET / HTTP/1.1" 200 20014
+[16/Oct/2023 00:01:34] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[16/Oct/2023 00:01:34] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 200 232948
+Not Found: /favicon.ico
+[16/Oct/2023 00:01:35] "GET /favicon.ico HTTP/1.1" 404 2565
+[16/Oct/2023 02:11:40] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 304 0
+[16/Oct/2023 02:11:40] "GET /static/assets/js/color-modes.js HTTP/1.1" 200 2585
+[16/Oct/2023 05:19:41] "GET / HTTP/1.1" 200 20014
+[16/Oct/2023 05:19:41] "GET /static/assets/js/color-modes.js HTTP/1.1" 304 0
+[16/Oct/2023 05:19:41] "GET /static/assets/dist/css/bootstrap.min.css HTTP/1.1" 304 0

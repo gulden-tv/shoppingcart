@@ -5,8 +5,8 @@ import requests
 import redis
 import json
 import sys
-sys.path.append('/var/www/shoppingcart/index/')
-from application import *
+import os
+from . application import *
 
 
 r = redis.StrictRedis(

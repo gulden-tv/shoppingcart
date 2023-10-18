@@ -44,8 +44,11 @@
             <center>Is empty</center>
             {% endif %}
 
-            <p class="small mb-0">Cart id: <span class="badge rounded-pill text-bg-light">cart-{{ userid }}</span></p>
             <p class="small mb-0">User id: <span class="badge rounded-pill text-bg-light">{{ userid }}</span></p>
+            <p class="small mb-0">Cart id: <span class="badge rounded-pill text-bg-light">cart-{{ userid }}</span></p>
+            <code>redis-cli -a please -h 10.21.17.68 get cart-{{ userid }}</code>
+            <p class="small mb-0">Order id: <span class="badge rounded-pill text-bg-light">order-{{ userid }}</span></p>
+            <code>redis-cli -a please -h 10.21.17.68 smembers order-{{ userid }}</code>
             {% if username == 'Undefined' %}
             <form action="/save-name/save" method="post">
                 {% csrf_token %}

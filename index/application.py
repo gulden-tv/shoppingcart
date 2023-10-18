@@ -66,22 +66,23 @@ def getProducts():
 
 def makeOrder(uid, uname):
     order = getCartByUserId(uid)
-    order['userid'] = uid
-    order['username'] = uname
+    order["username"] = uname
     IST = pytz.timezone('Asia/Shanghai')
-    order['date'] = datetime.now(IST).strftime('%Y-%m-%d %H:%M:%S')
-    orders = mdb['orders']
+    order["date"] = datetime.now(IST).strftime('%Y-%m-%d %H:%M:%S')
+    # orders = mdb["orders"] # store to mongo
+    # oid = orders.insert_one(order).inserted_id # store to mongo
+    r.sadd('order-' + str(uid), json.dumps(order)) # store to redis
     clearCart(uid)
-    oid = orders.insert_one(order).inserted_id
-    return oid
+    return order["date"]
 
 
 def getOrdersByUserId(uid):
-    orders = mdb['orders'].find({'userid': uid})
-    r = []
-    for o in orders:
-        r.append({'date': o['date'], 'total': o['total']})
-    return r
+    # orders = mdb['orders'].find({'userid': uid}) # get orders from mongodb
+    orders = r.smembers('order-' + str(uid)) # get from redis
+    ret = []
+    for order in orders:
+        ret.append(json.loads(order))
+    return ret
 
 
 def showMessage():

@@ -120,7 +120,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = ['10.21.17.68']
+ALLOWED_HOSTS = ['127.0.0.1', '10.21.17.68']
 
 # Cookie Based, Browser Clearing Will lose it.
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"

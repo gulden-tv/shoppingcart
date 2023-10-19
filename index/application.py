@@ -81,9 +81,22 @@ def getOrdersByUserId(uid):
     orders = r.smembers('order-' + str(uid)) # get from redis
     ret = []
     for order in orders:
-        ret.append(json.loads(order))
+        update_order = json.loads(order)
+        numbers = 0
+        for item in update_order['items']:
+            numbers += int(item['quantity'])
+        update_order['numbers'] = numbers
+        ret.append(update_order)
     return ret
 
+
+def getTotalSumAllOrders(uid):
+    orders = r.smembers('order-' + str(uid)) # get from redis
+    sum = 0.0
+    for order in orders:
+        json_order = json.loads(order)
+        sum += float(json_order['total'])
+    return sum
 
 def showMessage():
     message = requests.session['message']

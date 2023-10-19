@@ -94,12 +94,14 @@ def index(request):
     request.session['message'] = ""
     products = getProducts()
     orders = getOrdersByUserId(userid)
+    total_orders_sum = getTotalSumAllOrders(userid)
     return render(request, 'base.html',
                   {'products': products,
                    'userid': userid,
                    'username': request.session['username'] if 'username' in request.session else "Undefined",
                    'cart': getCartByUserId(userid),
                    'orders': orders,
+                   'orders_total': total_orders_sum,
                    'totalSum': 0.0,
                    'message': msg,
                    })

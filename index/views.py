@@ -18,7 +18,7 @@ r = redis.StrictRedis(
     decode_responses=True
 )
 
-
+# Data products example
 # products_backup = [
 #     {
 #         "id": "e182115a-63d2-42ce-8fe0-5f696ecdfba6",
@@ -85,17 +85,13 @@ r = redis.StrictRedis(
 # r.set('products', srialize_product)
 
 def index(request):
-    if 'user' not in request.session:
-        request.session['user'] = request.session._get_or_create_session_key()
-        request.session['username'] = "Undefined"
-        request.session['message'] = ""
-    userid = request.session['user']
+    userid = getUserId(request)
     msg = request.session['message'] if 'message' in request.session else ""
     request.session['message'] = ""
     products = getProducts()
     orders = getOrdersByUserId(userid)
     total_orders_sum = getTotalSumAllOrders(userid)
-    return render(request, 'base.html',
+    return render(request, 'index.html',
                   {'products': products,
                    'userid': userid,
                    'username': request.session['username'] if 'username' in request.session else "Undefined",
@@ -108,18 +104,14 @@ def index(request):
 
 
 def add(request, productid):
-    if 'user' not in request.session:
-        request.session['user'] = request.session._get_or_create_session_key()
-    userid = request.session['user']
+    userid = getUserId(request)
     putToCart(userid, productid)
     return redirect(index)
     # return render(request, 'add.html', {'response': response, 'user': request.session['user']})
 
 
 def makeorder(request):
-    if 'user' not in request.session:
-        request.session['user'] = request.session._get_or_create_session_key()
-    userid = request.session['user']
+    userid = getUserId(request)
     insert_id = makeOrder(userid, request.session['username'])
     request.session['message'] = "Your order number is " + str(insert_id)
     return redirect(index)
@@ -135,5 +127,20 @@ def savename(request, action='save'):
     elif request.POST.get("username"):
         request.session['username'] = request.POST.get("username")
     return redirect(index)
+
+
+def showorders(request):
+    userid = getUserId(request)
+    orders = getOrdersByUserId(userid)
+    total_orders_sum = getTotalSumAllOrders(userid)
+    return render(request, 'orders.html',
+                  {
+                   'userid': userid,
+                   'username': request.session['username'] if 'username' in request.session else "Undefined",
+                   'cart': getCartByUserId(userid),
+                   'orders': orders,
+                   'orders_total': total_orders_sum,
+                   'totalSum': 0.0,
+                   })
 
 r.close()

@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+
+{% block title %}Orders{% endblock title %}
+
+{% block cart %}
+{% include 'header-cart.html' %}
+{% endblock cart %}
+
+{% block content %}
+    <div class="row mb-3 ">
+        <div class="col-12">
+            <h2 class="display-6 text-center mb-4">Your orders</h2>
+            {% if orders|length > 0 %}
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Sum</th>
+                </tr>
+                </thead>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.date }}</td>
+                    <td>{{ order.numbers }}</td>
+                    <td>{{ order.total }}</td>
+                </tr>
+                {% endfor %}
+                <tfoot>
+                <tr>
+                    <th>Total</th>
+                    <td></td>
+                    <td>{{ orders_total }}</td>
+                </tr>
+                </tfoot>
+            </table>
+            {% else %}
+            <center>You don't have orders</center>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

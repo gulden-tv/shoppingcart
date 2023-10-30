@@ -104,4 +104,12 @@ def showMessage():
     return message
 
 
+def getUserId(request=None):
+    if 'user' not in request.session:
+        request.session['user'] = request.session._get_or_create_session_key()
+        request.session['username'] = "Undefined"
+        request.session['message'] = ""
+    userid = request.session['user']
+    return userid
+
 r.close()

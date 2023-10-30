@@ -8,8 +8,6 @@
 
 {% block content %}
 
-    <div class="row mb-3 ">
-        <div class="col-12">
             <h2 class="display-6 text-center mb-1">Order {{ order.id }}</h2>
                 <h4 class="text-center mb-4">{{ order.created }}</h4>
             {% if order|length > 0 %}
@@ -40,6 +38,5 @@
             {% else %}
             <center>You don't have orders</center>
             {% endif %}
-        </div>
-    </div>
+
 {% endblock content %}

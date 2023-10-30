@@ -7,38 +7,35 @@
 {% endblock cart %}
 
 {% block content %}
-
-    <div class="row mb-3 ">
-        <div class="col-12">
-            <h2 class="display-6 text-center mb-4">Your orders</h2>
-            {% if orders|length > 0 %}
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Date</th>
-                    <th>Items</th>
-                    <th>Sum</th>
-                </tr>
-                </thead>
-                {% for order in orders %}
-                <tr>
-                    <td>{{ order.id }}</td>
-                    <td><a href="/order/{{ order.id }}">{{ order.date }}</a></td>
-                    <td>{{ order.numbers }}</td>
-                    <td>{{ order.total }}</td>
-                </tr>
-                {% endfor %}
-                <tfoot>
-                <tr>
-                    <th colspan="3">Total</th>
-                    <th>{{ orders_total }}</th>
-                </tr>
-                </tfoot>
-            </table>
-            {% else %}
-            <center>You don't have orders</center>
-            {% endif %}
-        </div>
+    <h2 class="display-6 text-center mb-4">Your orders</h2>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        {% if orders|length > 0 %}
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Items</th>
+                <th>Sum</th>
+            </tr>
+            </thead>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td><a href="/order/{{ order.id }}">{{ order.date }}</a></td>
+                <td>{{ order.numbers }}</td>
+                <td>{{ order.total }}</td>
+            </tr>
+            {% endfor %}
+            <tfoot>
+            <tr>
+                <th colspan="3">Total</th>
+                <th>{{ orders_total }}</th>
+            </tr>
+            </tfoot>
+        </table>
+        {% else %}
+        <center>You don't have orders</center>
+        {% endif %}
     </div>
 {% endblock content %}

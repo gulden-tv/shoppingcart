@@ -6,8 +6,7 @@ import redis
 import json
 import sys
 import os
-from . application import *
-
+from .application import *
 
 r = redis.StrictRedis(
     # host='10.21.17.68',
@@ -17,6 +16,7 @@ r = redis.StrictRedis(
     charset="utf-8",
     decode_responses=True
 )
+
 
 # Data products example
 # products_backup = [
@@ -135,12 +135,29 @@ def showorders(request):
     total_orders_sum = getTotalSumAllOrders(userid)
     return render(request, 'orders.html',
                   {
-                   'userid': userid,
-                   'username': request.session['username'] if 'username' in request.session else "Undefined",
-                   'cart': getCartByUserId(userid),
-                   'orders': orders,
-                   'orders_total': total_orders_sum,
-                   'totalSum': 0.0,
-                   })
+                      'userid': userid,
+                      'username': request.session['username'] if 'username' in request.session else "Undefined",
+                      'cart': getCartByUserId(userid),
+                      'orders': orders,
+                      'orders_total': total_orders_sum,
+                      'totalSum': 0.0,
+                  })
+
+
+def showorder(request, orderid):
+    userid = getUserId(request)
+    order = getOrderById(orderid)
+    if "id" not in order:
+        return render(request, '404.html')
+    if "user_id" in order and userid != order['user_id']:
+        return render(request, '403.html')
+    return render(request, 'order.html',
+                  {
+                      'userid': userid,
+                      'username': request.session['username'] if 'username' in request.session else "Undefined",
+                      'cart': getCartByUserId(userid),
+                      'order': order,
+                  })
+
 
 r.close()

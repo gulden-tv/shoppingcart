@@ -17,7 +17,6 @@ r = redis.StrictRedis(
     decode_responses=True
 )
 
-
 # Data products example
 # products_backup = [
 #     {
@@ -88,24 +87,46 @@ def index(request):
     userid = getUserId(request)
     msg = request.session['message'] if 'message' in request.session else ""
     request.session['message'] = ""
-    products = getProducts()
+    products = getProducts(-1)
     orders = getOrdersByUserId(userid)
     total_orders_sum = getTotalSumAllOrders(userid)
     return render(request, 'index.html',
                   {'products': products,
                    'userid': userid,
                    'username': request.session['username'] if 'username' in request.session else "Undefined",
-                   'cart': getCartByUserId(userid),
+                   'cart': getCartByUserIdSql(userid),
                    'orders': orders,
                    'orders_total': total_orders_sum,
                    'totalSum': 0.0,
                    'message': msg,
+                   'page_numbers': getProductPagesTotal(100),
+                   })
+
+
+def page(request, pagenumber):
+    userid = getUserId(request)
+    msg = request.session['message'] if 'message' in request.session else ""
+    request.session['message'] = ""
+    products = getProducts(pagenumber)
+    orders = getOrdersByUserId(userid)
+    total_orders_sum = getTotalSumAllOrders(userid)
+    return render(request, 'index.html',
+                  {'products': products,
+                   'userid': userid,
+                   'username': request.session['username'] if 'username' in request.session else "Undefined",
+                   'cart': getCartByUserIdSql(userid),
+                   'orders': orders,
+                   'orders_total': total_orders_sum,
+                   'total_sum': 0.0,
+                   'message': msg,
+                   'page_numbers': getProductPagesTotal(10),
                    })
 
 
 def add(request, productid):
     userid = getUserId(request)
-    putToCart(userid, productid)
+    # putToCart(userid, productid)
+    putToCartSql(userid, productid)
     return redirect(index)
     # return render(request, 'add.html', {'response': response, 'user': request.session['user']})
 
@@ -137,7 +158,7 @@ def showorders(request):
                   {
                       'userid': userid,
                       'username': request.session['username'] if 'username' in request.session else "Undefined",
-                      'cart': getCartByUserId(userid),
+                      'cart': getCartByUserIdSql(userid),
                       'orders': orders,
                       'orders_total': total_orders_sum,
                       'totalSum': 0.0,
@@ -155,7 +176,7 @@ def showorder(request, orderid):
                   {
                       'userid': userid,
                       'username': request.session['username'] if 'username' in request.session else "Undefined",
-                      'cart': getCartByUserId(userid),
+                      'cart': getCartByUserIdSql(userid),
                       'order': order,
                   })
 

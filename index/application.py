@@ -8,16 +8,15 @@ from datetime import datetime
 import pytz
 import sys
 
-r = redis.StrictRedis(
-    # host='10.21.17.68',
-    host='127.0.0.1',
-    port=6379,
-    password='please',
-    charset="utf-8",
-    decode_responses=True
-)
-# m = MongoClient('mongodb://admin:helloworld312@10.21.17.68', 27017)
-# mdb = m['ShoppingCart']
+# r = redis.StrictRedis(
+#     # host='10.21.17.68',
+#     host='127.0.0.1',
+#     port=6379,
+#     password='please',
+#     charset="utf-8",
+#     decode_responses=True
+# )
+
 connection = sqlite3.connect('index/database.sqlite3', check_same_thread=False)
 connection.row_factory = sqlite3.Row # make fetch to keyname array
 sql = connection.cursor()
@@ -40,13 +39,33 @@ def getCartByUserId(uid):
     return cart
 
 
+def getCartByUserIdSql(uid):
+    sql.execute("""SELECT product_id, name, price, count(*) as quantity,  
+                (SELECT sum(products.price) FROM cart
+                    LEFT JOIN products ON product_id = products.id
+                    WHERE user_id = ?) as total,
+                (SELECT count(*) FROM cart
+                    LEFT JOIN products ON product_id = products.id
+                    WHERE user_id = ?) as quantity
+                FROM cart 
+                LEFT JOIN products ON products.id = cart.product_id 
+                WHERE user_id = ?
+                GROUP BY product_id ORDER BY created""", [uid, uid, uid])
+    rows = sql.fetchall()
+    items = [dict(row) for row in rows]
+    total = items[0]['total'] if len(items) > 0 else 0
+    quantity = items[0]['quantity'] if len(items) > 0 else 0
+    cart = {'total': total, 'quantity': quantity, 'items': items}
+    # print(cart, file=sys.stderr)
+    return cart
+
+
 def putToCart(uid, productid):
     cartid = 'cart-' + uid
     json_cart = r.get(cartid)
     cart = []
     if json_cart:
         cart = json.loads(json_cart)
-
     in_cart = False
     for item in cart:
         if item['product_id'] == productid:
@@ -59,19 +78,38 @@ def putToCart(uid, productid):
     r.expire(cartid, 600)  # Time life of cart in seconds
 
 
+def putToCartSql(uid, pid):
+    IST = pytz.timezone('Asia/Shanghai')
+    now = datetime.now(IST).strftime('%Y-%m-%d %H:%M:%S')
+    sql.execute("INSERT INTO cart (user_id, product_id, created) VALUES (?, ?, ?)", [uid, pid, now])
+    connection.commit()
+
+
 def clearCart(uid):
-    cartid = 'cart-' + uid
-    r.expire(cartid, 0)
+    # cartid = 'cart-' + uid
+    # r.expire(cartid, 0)
+    sql.execute("DELETE FROM cart WHERE user_id = ?", [uid])
+    connection.commit()
 
-
-def getProducts():
-    sql.execute("SELECT id, name, stock, price FROM products")
+def getProducts(pagenumber=-1):
+    pagesize = 10
+    if pagenumber == -1:
+        sql.execute("SELECT id, name, stock, price FROM products")
+    else:
+        sql.execute("SELECT id, name, stock, price FROM products LIMIT ?, ?", [int(pagenumber)*pagesize, pagesize])
     return sql.fetchall()
     # return json.loads(r.get('products'))
 
 
+def getProductPagesTotal(pagesize=10):
+    sql.execute("SELECT count(*)/? FROM products", [int(pagesize)])
+    last_page = int(sql.fetchone()[0])
+    if last_page % pagesize != 0:
+        last_page += 1
+    return range(last_page)
+
 def makeOrder(uid, uname):
-    order = getCartByUserId(uid)
+    order = getCartByUserIdSql(uid)
     # order["username"] = uname
     IST = pytz.timezone('Asia/Shanghai')
     order["date"] = datetime.now(IST).strftime('%Y-%m-%d %H:%M:%S')
@@ -89,7 +127,6 @@ def makeOrder(uid, uname):
 def getOrdersByUserId(uid):
     # orders = mdb['orders'].find({'userid': uid}) # get orders from mongodb
     # orders = r.smembers('order-' + str(uid)) # get from redis
-
     sql.execute("""SELECT id, quantity as numbers, total, created as date FROM orders WHERE user_id = ?;""", (uid, )) # get from sqlite3
     orders = sql.fetchall()
     return orders
@@ -133,5 +170,5 @@ def getUserId(request=None):
     userid = request.session['user']
     return userid
 
-r.close()
+# r.close()
 

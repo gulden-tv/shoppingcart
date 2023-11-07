@@ -43,18 +43,17 @@ def getCartByUserIdSql(uid):
     sql.execute("""SELECT product_id, name, price, count(*) as quantity,  
                 (SELECT sum(products.price) FROM cart
                     LEFT JOIN products ON product_id = products.id
-                    WHERE user_id = ?) as total,
-                (SELECT count(*) FROM cart
-                    LEFT JOIN products ON product_id = products.id
-                    WHERE user_id = ?) as quantity
+                    WHERE user_id = ?) as total
                 FROM cart 
                 LEFT JOIN products ON products.id = cart.product_id 
                 WHERE user_id = ?
-                GROUP BY product_id ORDER BY created""", [uid, uid, uid])
+                GROUP BY product_id ORDER BY created""", [uid, uid])
     rows = sql.fetchall()
     items = [dict(row) for row in rows]
     total = items[0]['total'] if len(items) > 0 else 0
-    quantity = items[0]['quantity'] if len(items) > 0 else 0
+    quantity = 0
+    for i in items:
+        quantity += i['quantity']
     cart = {'total': total, 'quantity': quantity, 'items': items}
     # print(cart, file=sys.stderr)
     return cart
@@ -127,7 +126,7 @@ def makeOrder(uid, uname):
 def getOrdersByUserId(uid):
     # orders = mdb['orders'].find({'userid': uid}) # get orders from mongodb
     # orders = r.smembers('order-' + str(uid)) # get from redis
-    sql.execute("""SELECT id, quantity as numbers, total, created as date FROM orders WHERE user_id = ?;""", (uid, )) # get from sqlite3
+    sql.execute("""SELECT id, quantity, total, created as date FROM orders WHERE user_id = ?;""", [uid]) # get from sqlite3
     orders = sql.fetchall()
     return orders
 

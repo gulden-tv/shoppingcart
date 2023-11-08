@@ -1,7 +1,7 @@
 # Shopping cart example
 Before run the server you need to install few python modules
 
-## Need to install this python modules
+## Require python modules
 ```shell
 pip install django
 pip install django-bootstrap-v5

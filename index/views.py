@@ -192,10 +192,13 @@ def showorder(request, orderid):
 def login(request):
     user_session = getUserSessionId(request)
     uid = getUserId(request)
+    last_login = getLastLoginDate(uid)
+    user_login = getUserLogin(uid)
     if uid == 0 and request.POST.get("login"):
         uid = checkLoginPassword(request.POST.get("login"), request.POST.get("password"))
         if uid != 0:
             loginUser(request, uid)
+            last_login = getLastLoginDate(uid)
             setMessage(request, "Welcome " + getUserName(uid))
         else:
             setMessage(request, "Wrong login/password", "danger")
@@ -205,6 +208,8 @@ def login(request):
                       'user_session': user_session,
                       'user_id': uid,
                       'username': getUserName(uid),
+                      'user_login': user_login,
+                      'last_login': last_login,
                       'cart': getCartByUserSessionSql(user_session),
                       'message': showMessage(request),
                   })

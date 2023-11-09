@@ -10,7 +10,7 @@
 
         <div class="form-floating">
             {% csrf_token %}
-            <input name="login" type="login" class="form-control" id="floatingInput" placeholder="login">
+            <input name="login" type="text" class="form-control" id="floatingInput" placeholder="login">
             <label for="floatingInput">Login</label>
         </div>
         <div class="form-floating">
@@ -29,8 +29,13 @@
 </div>
 {% else %}
 <div class="form-signin w-50 m-auto">
-    <h1 class="h3 mb-3 fw-normal">Hello {{ username }}</h1>
-
+    <h1 class="h3 mb-3 fw-normal">Hello {{ user_login }}</h1>
+    <p>Name: <b>{{ username }}</b></p>
+    {% if last_login != "Undefined" %}
+    <p>You login last time at {{ last_login }}</p>
+    {% else %}
+    <p>You never login before</p>
+    {% endif %}
     <button class="btn btn-primary w-100 py-2" type="submit" onclick="location.href='/logout/'">Sign out</button>
 </div>
 {% endif %}

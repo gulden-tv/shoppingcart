@@ -149,7 +149,7 @@ def getUserSessionId(request=None):
 
 def getUserId(request):
     getUserSessionId(request)
-    user_id = request.session['uid']
+    user_id = request.session['uid'] if 'uid' in request.session else 0
     return user_id
 
 
@@ -171,6 +171,23 @@ def loginUser(request, uid):
     else:
         getUserSessionId(request)
         request.session['uid'] = uid
+    IST = pytz.timezone('Asia/Shanghai')
+    now = datetime.now(IST).strftime('%Y-%m-%d %H:%M:%S')
+    connection.execute("INSERT INTO lastlogin VALUES(?, ?, ?);""", [uid, now, ""])
+    connection.execute("UPDATE users SET lastlogin = ? WHERE id = ?;""", [now, uid])
+    connection.commit()
+
+
+def getLastLoginDate(uid):
+    sql.execute("SELECT date_time FROM lastlogin WHERE user_id = ? ORDER BY date_time DESC LIMIT 1, 1;", [uid])
+    lastlogin = sql.fetchone()
+    return lastlogin[0] if lastlogin else "Undefined"
+
+
+def getUserLogin(uid):
+    sql.execute("SELECT login FROM users WHERE id = ?;", [uid])
+    login = sql.fetchone()
+    return login[0] if login else "Undefined"
 
 
 def logoutUser(request):

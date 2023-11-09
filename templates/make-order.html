@@ -1,9 +1,12 @@
-{% include 'header.html' %}
+{% extends 'main.html' %}
 
-<main>
-    {{ cart }}
-    <br/>
-    {{ insert_id }}
-</main>
+{% block title %}Make Order{% endblock title %}
 
-{% include 'footer.html' %}
+{% block cart %}
+{% include 'header-cart.html' %}
+{% endblock cart %}
+
+{% block content %}
+...
+{% endblock content %}
+

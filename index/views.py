@@ -8,14 +8,15 @@ import sys
 import os
 from .application import *
 
-r = redis.StrictRedis(
-    # host='10.21.17.68',
-    host='127.0.0.1',
-    port=6379,
-    password='please',
-    charset="utf-8",
-    decode_responses=True
-)
+
+# r = redis.StrictRedis(
+#     # host='10.21.17.68',
+#     host='127.0.0.1',
+#     port=6379,
+#     password='please',
+#     charset="utf-8",
+#     decode_responses=True
+# )
 
 # Data products example
 # products_backup = [
@@ -84,27 +85,27 @@ r = redis.StrictRedis(
 # r.set('products', srialize_product)
 
 def index(request):
-    userid = getUserId(request)
-    msg = request.session['message'] if 'message' in request.session else ""
-    request.session['message'] = ""
+    user_session = getUserSessionId(request)
+    uid = getUserId(request)
     products = getProducts(-1)
-    orders = getOrdersByUserId(userid)
-    total_orders_sum = getTotalSumAllOrders(userid)
+    orders = getOrdersByUserId(user_session)
+    total_orders_sum = getTotalSumAllOrders(user_session)
     return render(request, 'index.html',
                   {'products': products,
-                   'userid': userid,
-                   'username': request.session['username'] if 'username' in request.session else "Undefined",
-                   'cart': getCartByUserIdSql(userid),
+                   'user_session': user_session,
+                   'user_id': uid,
+                   'username': getUserName(uid),
+                   'cart': getCartByUserSessionSql(user_session),
                    'orders': orders,
                    'orders_total': total_orders_sum,
                    'totalSum': 0.0,
-                   'message': msg,
+                   'message': showMessage(request),
                    'page_numbers': getProductPagesTotal(100),
                    })
 
 
 def page(request, pagenumber):
-    userid = getUserId(request)
+    userid = getUserSessionId(request)
     msg = request.session['message'] if 'message' in request.session else ""
     request.session['message'] = ""
     products = getProducts(pagenumber)
@@ -114,7 +115,7 @@ def page(request, pagenumber):
                   {'products': products,
                    'userid': userid,
                    'username': request.session['username'] if 'username' in request.session else "Undefined",
-                   'cart': getCartByUserIdSql(userid),
+                   'cart': getCartByUserSessionSql(userid),
                    'orders': orders,
                    'orders_total': total_orders_sum,
                    'total_sum': 0.0,
@@ -124,7 +125,7 @@ def page(request, pagenumber):
 
 
 def add(request, productid):
-    userid = getUserId(request)
+    userid = getUserSessionId(request)
     # putToCart(userid, productid)
     putToCartSql(userid, productid)
     return redirect(index)
@@ -132,11 +133,14 @@ def add(request, productid):
 
 
 def makeorder(request):
-    userid = getUserId(request)
-    insert_id = makeOrder(userid, request.session['username'])
-    request.session['message'] = "Your order number is " + str(insert_id)
+    uid = getUserId(request)
+    if uid == 0:
+        setMessage(request, "You must login before order", "warning")
+        return redirect(login)
+    user_session = getUserSessionId(request)
+    new_order_id = makeOrder(uid, user_session)
+    setMessage(request, "Your order number is " + str(new_order_id))
     return redirect(index)
-    # return render(request, 'make-order.html', {'cart': getCartByUserId(userid), 'order_id': insert_id})
 
 
 def savename(request, action='save'):
@@ -151,14 +155,16 @@ def savename(request, action='save'):
 
 
 def showorders(request):
-    userid = getUserId(request)
-    orders = getOrdersByUserId(userid)
-    total_orders_sum = getTotalSumAllOrders(userid)
+    user_session = getUserSessionId(request)
+    uid = getUserId(request)
+    orders = getOrdersByUserId(uid)
+    total_orders_sum = getTotalSumAllOrders(uid)
     return render(request, 'orders.html',
                   {
-                      'userid': userid,
-                      'username': request.session['username'] if 'username' in request.session else "Undefined",
-                      'cart': getCartByUserIdSql(userid),
+                      'user_session': user_session,
+                      'user_id': uid,
+                      'username': getUserName(uid),
+                      'cart': getCartByUserSessionSql(user_session),
                       'orders': orders,
                       'orders_total': total_orders_sum,
                       'totalSum': 0.0,
@@ -166,19 +172,46 @@ def showorders(request):
 
 
 def showorder(request, orderid):
-    userid = getUserId(request)
-    order = getOrderById(orderid)
+    uid = getUserId(request)
+    user_session = getUserSessionId(request)
+    order = getOrderById(orderid, uid)
     if "id" not in order:
         return render(request, '404.html')
-    if "user_id" in order and userid != order['user_id']:
+    if "uid" in order and uid != order['user_id']:
         return render(request, '403.html')
     return render(request, 'order.html',
                   {
-                      'userid': userid,
-                      'username': request.session['username'] if 'username' in request.session else "Undefined",
-                      'cart': getCartByUserIdSql(userid),
+                      'user_session': user_session,
+                      'user_id': uid,
+                      'username': getUserName(uid),
+                      'cart': getCartByUserSessionSql(user_session),
                       'order': order,
                   })
 
 
-r.close()
+def login(request):
+    user_session = getUserSessionId(request)
+    uid = getUserId(request)
+    if uid == 0 and request.POST.get("login"):
+        uid = checkLoginPassword(request.POST.get("login"), request.POST.get("password"))
+        if uid != 0:
+            loginUser(request, uid)
+            setMessage(request, "Welcome " + getUserName(uid))
+        else:
+            setMessage(request, "Wrong login/password", "danger")
+        return redirect(login)
+    return render(request, 'login.html',
+                  {
+                      'user_session': user_session,
+                      'user_id': uid,
+                      'username': getUserName(uid),
+                      'cart': getCartByUserSessionSql(user_session),
+                      'message': showMessage(request),
+                  })
+
+
+def logout(request):
+    logoutUser(request)
+    return redirect(index)
+
+# r.close()

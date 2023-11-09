@@ -21,33 +21,16 @@ connection = sqlite3.connect('index/database.sqlite3', check_same_thread=False)
 connection.row_factory = sqlite3.Row # make fetch to keyname array
 sql = connection.cursor()
 
-def getCartByUserId(uid):
-    cartid = 'cart-' + uid
-    json_cart = r.get(cartid)
-    products = getProducts()
-    cart = {'total': 0.0, 'quantity': 0, 'items': []}
-    if json_cart:
-        cart['items'] = json.loads(json_cart)
 
-    for product in products:
-        for c in cart['items']:
-            if c['product_id'] == product['id']:
-                c['name'] = product['name']
-                c['price'] = product['price']
-                cart['total'] += float(c['price']) * float(c['quantity'])
-                cart['quantity'] += int(c['quantity'])
-    return cart
-
-
-def getCartByUserIdSql(uid):
+def getCartByUserSessionSql(user_session):
     sql.execute("""SELECT product_id, name, price, count(*) as quantity,  
                 (SELECT sum(products.price) FROM cart
                     LEFT JOIN products ON product_id = products.id
-                    WHERE user_id = ?) as total
+                    WHERE user_session = ?) as total
                 FROM cart 
                 LEFT JOIN products ON products.id = cart.product_id 
-                WHERE user_id = ?
-                GROUP BY product_id ORDER BY created""", [uid, uid])
+                WHERE user_session = ?
+                GROUP BY product_id ORDER BY created""", [user_session, user_session])
     rows = sql.fetchall()
     items = [dict(row) for row in rows]
     total = items[0]['total'] if len(items) > 0 else 0
@@ -77,18 +60,17 @@ def putToCart(uid, productid):
     r.expire(cartid, 600)  # Time life of cart in seconds
 
 
-def putToCartSql(uid, pid):
+def putToCartSql(user_session, pid):
     IST = pytz.timezone('Asia/Shanghai')
     now = datetime.now(IST).strftime('%Y-%m-%d %H:%M:%S')
-    sql.execute("INSERT INTO cart (user_id, product_id, created) VALUES (?, ?, ?)", [uid, pid, now])
+    sql.execute("INSERT INTO cart (user_session, product_id, created) VALUES (?, ?, ?)", [user_session, pid, now])
     connection.commit()
 
 
-def clearCart(uid):
-    # cartid = 'cart-' + uid
-    # r.expire(cartid, 0)
-    sql.execute("DELETE FROM cart WHERE user_id = ?", [uid])
+def clearCart(user_session):
+    sql.execute("DELETE FROM cart WHERE user_session = ?", [user_session])
     connection.commit()
+
 
 def getProducts(pagenumber=-1):
     pagesize = 10
@@ -97,7 +79,6 @@ def getProducts(pagenumber=-1):
     else:
         sql.execute("SELECT id, name, stock, price FROM products LIMIT ?, ?", [int(pagenumber)*pagesize, pagesize])
     return sql.fetchall()
-    # return json.loads(r.get('products'))
 
 
 def getProductPagesTotal(pagesize=10):
@@ -107,20 +88,16 @@ def getProductPagesTotal(pagesize=10):
         last_page += 1
     return range(last_page)
 
-def makeOrder(uid, uname):
-    order = getCartByUserIdSql(uid)
-    # order["username"] = uname
+def makeOrder(uid, user_session):
+    order = getCartByUserSessionSql(user_session)
     IST = pytz.timezone('Asia/Shanghai')
     order["date"] = datetime.now(IST).strftime('%Y-%m-%d %H:%M:%S')
-    # orders = mdb["orders"] # store to mongo
-    # oid = orders.insert_one(order).inserted_id # store to mongo
-    # r.sadd('order-' + str(uid), json.dumps(order)) # store to redis
     sql = connection.execute("""INSERT INTO orders (user_id, quantity, total, created) VALUES(?, ?, ?, ?);""", (uid, order['quantity'], order['total'], order["date"]))
-    orderid = sql.lastrowid
-    connection.execute("""INSERT INTO order_items (order_id, items) VALUES(?, ?);""", (orderid, json.dumps(order['items'])))
+    order_id = sql.lastrowid
+    connection.execute("""INSERT INTO order_items (order_id, items) VALUES(?, ?);""", (order_id, json.dumps(order['items'])))
     connection.commit()
-    clearCart(uid)
-    return orderid # order["date"]
+    clearCart(user_session)
+    return order_id # order["date"]
 
 
 def getOrdersByUserId(uid):
@@ -131,10 +108,10 @@ def getOrdersByUserId(uid):
     return orders
 
 
-def getOrderById(oid):
+def getOrderById(oid, uid):
     sql.execute("""SELECT o.id, o.user_id, o.quantity, o.total, o.created, oi.items 
         FROM orders o, order_items oi 
-        WHERE o.id = ? AND oi.order_id = ?;""", (oid, oid, ))
+        WHERE o.id = ? AND oi.order_id = ? AND o.user_id = ?;""", (oid, oid, uid))
     rows = sql.fetchone()
     if rows is not None:
         order = dict(rows)
@@ -146,28 +123,62 @@ def getOrderById(oid):
 
 
 def getTotalSumAllOrders(uid):
-    # orders = r.smembers('order-' + str(uid)) # get from redis
-    # sum = 0.0
-    # for order in orders:
-    #     json_order = json.loads(order)
-    #     sum += float(json_order['total'])
     sql.execute("""SELECT sum(total) as sum FROM orders WHERE user_id = ?""", (uid,))
     sum = sql.fetchone()['sum']
     return sum if sum is not None else 0.0
 
-def showMessage():
-    message = requests.session['message']
-    requests.session['message'] = ""
+def showMessage(request):
+    message = request.session['message']
+    request.session['message'] = {"text": "", "message_type": ""}
     return message
 
 
-def getUserId(request=None):
+def setMessage(request, message, message_type="success"):
+    request.session["message"] = {"text": message, "message_type": message_type}
+
+
+def getUserSessionId(request=None):
     if 'user' not in request.session:
         request.session['user'] = request.session._get_or_create_session_key()
         request.session['username'] = "Undefined"
         request.session['message'] = ""
-    userid = request.session['user']
-    return userid
+        request.session['uid'] = 0
+    user_session_id = request.session['user']
+    return user_session_id
+
+
+def getUserId(request):
+    getUserSessionId(request)
+    user_id = request.session['uid']
+    return user_id
+
+
+def getUserName(uid):
+    sql.execute("SELECT name FROM users WHERE id = ?;", [uid])
+    name = sql.fetchone()
+    return name[0] if name else "Undefined"
+
+
+def checkLoginPassword(login, password):
+    sql.execute("SELECT id FROM users WHERE login = ? AND password = ?;", [login, password])
+    uid = sql.fetchone()
+    return uid[0] if uid else 0
+
+
+def loginUser(request, uid):
+    if 'user' in request.session:
+        request.session['uid'] = uid
+    else:
+        getUserSessionId(request)
+        request.session['uid'] = uid
+
+
+def logoutUser(request):
+    if 'user' in request.session:
+        request.session.delete('user')
+    else:
+        getUserSessionId(request)
+        request.session['uid'] = 0
 
 # r.close()
 

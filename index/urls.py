@@ -9,7 +9,9 @@ urlpatterns = [
     path('make-order/', views.makeorder, name="makeorder"),
     path('orders/', views.showorders, name="showorders"),
     path('order/<orderid>', views.showorder, name="showorder"),
-    path('save-name/<action>', views.savename, name="savename")
+    path('save-name/<action>', views.savename, name="savename"),
+    path('login/', views.login, name="login"),
+    path('logout/', views.logout, name="logout")
 ]
 
 

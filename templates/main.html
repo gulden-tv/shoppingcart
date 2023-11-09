@@ -20,91 +20,104 @@
 <nav class="navbar fixed-top bg-light navbar-expand-lg">
     <header class="container">
         <a class="navbar-brand col-lg-1 me-0" href="/">SHOP</a>
-            {% block menu %}
-            <ul class="navbar-nav col-lg-6 justify-content-lg-left">
-                <li class="nav-item ">
-                    <a class="nav-link active" aria-current="page" href="/orders">Orders</a>
-                </li>
-            </ul>
-
-            <div class="col-lg-4">
-                <div class="btn-group">
+        {% block menu %}
+        {% if user_id != 0 %}
+        <ul class="navbar-nav col-lg-6 justify-content-lg-left">
+            <li class="nav-item ">
+                <a class="nav-link active" aria-current="page" href="/orders">Orders</a>
+            </li>
+        </ul>
+        {% endif %}
+        <div class="col-lg-4">
+            <div class="btn-group">
                 {% block cart %}
-
-                    <a class="nav-link dropdown-toggle disable me-3" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                             class="bi bi-cart" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
-                        </svg>
-                    </a>
-
+                    {% include 'header-cart.html' %}
                 {% endblock cart %}
-                </div>
-
-                {% block user %}
-                <div class="btn-group">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                             class="bi bi-person" viewBox="0 0 16 16">
-                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
-                        </svg>
-                    </a>
-                    <ul class="dropdown-menu text-center" title="{{ userid }}">
-                        <li class="small">id: <span class="badge rounded-pill text-bg-light">
-                            {% if userid|length > 10%}
-                                cart-{{ userid|truncatechars:9 }}{{ userid|slice:"::-1"|truncatechars:9|slice:'::-1' }}
-                            {% else %}
-                                cart-{{ userid }}
-                            {% endif %}
-                            </span>
-                        </li>
-                        <li><hr/></li>
-                        <li class="small"  title="cart-{{ userid }}">
-                            Cart id: <span
-                                class="badge rounded-pill text-bg-light">
-                            {% if userid|length > 10%}
-                                cart-{{ userid|truncatechars:9 }}{{ userid|slice:"::-1"|truncatechars:9|slice:'::-1' }}
-                            {% else %}
-                                cart-{{ userid }}
-                            {% endif %}
-                        </span></li>
-                        <!--                        <code>redis-cli -a please -h 10.21.17.68 get cart-{{ userid }}</code>-->
-        <!--                    <li><hr/></li>-->
-        <!--                    <li class="small mb-0">Order id: <span class="badge rounded-pill text-bg-light">order-{{ userid }}</span></li>-->
-                        <!--                        <code>redis-cli -a please -h 10.21.17.68 smembers order-{{ userid }}</code>-->
-                        {% if username == 'Undefined' %}
-                        <li><hr/></li>
-                        <li>
-                            <form action="/save-name/save" method="post">
-                                {% csrf_token %}
-                                <label for="username">Your name: </label>
-                                <input id="username" type="text" name="username" value="">
-                                <input type="submit" class="btn btn-sm btn-primary" value="Save name">
-                            </form>
-                        </li>
-                        {% else %}
-                        <li class="small mb-0">User name: <span
-                                class="badge rounded-pill text-bg-light">{{ username }}</span></li>
-                        <form action="/save-name/edit" method="post">
-                            {% csrf_token %}
-                            <input type="submit" class="btn btn-sm btn-primary" value="Edit name">
-                        </form>
-                        {% endif %}
-                        </li>
-                    </ul>
-                </div>
-                {% endblock user %}
             </div>
+
+            {% block user %}
+            <div class="btn-group">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                         class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu" title="{{ userid }}">
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-person-circle me-1" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd"
+                                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                            </svg>
+                            {{ username }}</a>
+                    </li>
+                    <li>
+                        <hr/>
+                    </li>
+                    <li>
+                        {% if user_id == 0 %}
+                        <a href="/login/" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-box-arrow-in-right me-1" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                                <path fill-rule="evenodd"
+                                      d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                            </svg>
+                            Login</a>
+                        {% else %}
+                        <a href="/logout/" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-box-arrow-right me-1" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                <path fill-rule="evenodd"
+                                      d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                            </svg>
+                            Logout</a>
+                        {% endif %}
+                    </li>
+                    <li class="dropdown-item" title="Session id: {{ user_session }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-fingerprint me-1" viewBox="0 0 16 16">
+                            <path d="M8.06 6.5a.5.5 0 0 1 .5.5v.776a11.5 11.5 0 0 1-.552 3.519l-1.331 4.14a.5.5 0 0 1-.952-.305l1.33-4.141a10.5 10.5 0 0 0 .504-3.213V7a.5.5 0 0 1 .5-.5Z"/>
+                            <path d="M6.06 7a2 2 0 1 1 4 0 .5.5 0 1 1-1 0 1 1 0 1 0-2 0v.332c0 .409-.022.816-.066 1.221A.5.5 0 0 1 6 8.447c.04-.37.06-.742.06-1.115V7Zm3.509 1a.5.5 0 0 1 .487.513 11.5 11.5 0 0 1-.587 3.339l-1.266 3.8a.5.5 0 0 1-.949-.317l1.267-3.8a10.5 10.5 0 0 0 .535-3.048A.5.5 0 0 1 9.569 8Zm-3.356 2.115a.5.5 0 0 1 .33.626L5.24 14.939a.5.5 0 1 1-.955-.296l1.303-4.199a.5.5 0 0 1 .625-.329Z"/>
+                            <path d="M4.759 5.833A3.501 3.501 0 0 1 11.559 7a.5.5 0 0 1-1 0 2.5 2.5 0 0 0-4.857-.833.5.5 0 1 1-.943-.334Zm.3 1.67a.5.5 0 0 1 .449.546 10.72 10.72 0 0 1-.4 2.031l-1.222 4.072a.5.5 0 1 1-.958-.287L4.15 9.793a9.72 9.72 0 0 0 .363-1.842.5.5 0 0 1 .546-.449Zm6 .647a.5.5 0 0 1 .5.5c0 1.28-.213 2.552-.632 3.762l-1.09 3.145a.5.5 0 0 1-.944-.327l1.089-3.145c.382-1.105.578-2.266.578-3.435a.5.5 0 0 1 .5-.5Z"/>
+                            <path d="M3.902 4.222a4.996 4.996 0 0 1 5.202-2.113.5.5 0 0 1-.208.979 3.996 3.996 0 0 0-4.163 1.69.5.5 0 0 1-.831-.556Zm6.72-.955a.5.5 0 0 1 .705-.052A4.99 4.99 0 0 1 13.059 7v1.5a.5.5 0 1 1-1 0V7a3.99 3.99 0 0 0-1.386-3.028.5.5 0 0 1-.051-.705ZM3.68 5.842a.5.5 0 0 1 .422.568c-.029.192-.044.39-.044.59 0 .71-.1 1.417-.298 2.1l-1.14 3.923a.5.5 0 1 1-.96-.279L2.8 8.821A6.531 6.531 0 0 0 3.058 7c0-.25.019-.496.054-.736a.5.5 0 0 1 .568-.422Zm8.882 3.66a.5.5 0 0 1 .456.54c-.084 1-.298 1.986-.64 2.934l-.744 2.068a.5.5 0 0 1-.941-.338l.745-2.07a10.51 10.51 0 0 0 .584-2.678.5.5 0 0 1 .54-.456Z"/>
+                            <path d="M4.81 1.37A6.5 6.5 0 0 1 14.56 7a.5.5 0 1 1-1 0 5.5 5.5 0 0 0-8.25-4.765.5.5 0 0 1-.5-.865Zm-.89 1.257a.5.5 0 0 1 .04.706A5.478 5.478 0 0 0 2.56 7a.5.5 0 0 1-1 0c0-1.664.626-3.184 1.655-4.333a.5.5 0 0 1 .706-.04ZM1.915 8.02a.5.5 0 0 1 .346.616l-.779 2.767a.5.5 0 1 1-.962-.27l.778-2.767a.5.5 0 0 1 .617-.346Zm12.15.481a.5.5 0 0 1 .49.51c-.03 1.499-.161 3.025-.727 4.533l-.07.187a.5.5 0 0 1-.936-.351l.07-.187c.506-1.35.634-2.74.663-4.202a.5.5 0 0 1 .51-.49Z"/>
+                        </svg>
+
+                        {% if user_session|length > 10%}
+                        {{ user_session|truncatechars:9 }}{{ user_session|slice:"::-1"|truncatechars:9|slice:'::-1' }}
+                        {% else %}
+                        {{ user_session }}
+                        {% endif %}
+
+                    </li>
+                    <li class="dropdown-item" title="User id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-person-fill-gear me-1" viewBox="0 0 16 16">
+                            <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/>
+                        </svg>
+                        {{ user_id }}
+                    </li>
+                </ul>
+            </div>
+            {% endblock user %}
+        </div>
         {% endblock menu %}
         </div>
     </header>
 </nav>
 <div class="container py-3">
     <main class="mt-5">
-        {% if message|length > 0 %}
+        {% if message.text|length > 0 %}
         {% block message %}
-        <div class="alert alert-success" role="alert">
-            <strong>Thank you for order!</strong> {{ message }}.
+        <div class="alert alert-{{ message.message_type}} w-50 m-auto mb-2" role="alert">
+            {{ message.text }}
         </div>
         {% endblock message %}
         {% endif %}
@@ -115,7 +128,7 @@
     </main>
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
-        {% block footer %}  {% endblock footer %}
+        {% block footer %} {% endblock footer %}
     </footer>
 </div>
 <script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>

@@ -10,6 +10,7 @@ pip install redis
 pip install json
 pip install pymongo
 pip install sqlite3
+pip install pytz
 ```
 
 ## Runing
